@@ -1,7 +1,8 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using System.ComponentModel.DataAnnotations.Schema;
 
 namespace EventEaseApp.Models
 {
+    [Table("Venue_")]
     public class Venue
     {
         public int VenueID { get; set; }
