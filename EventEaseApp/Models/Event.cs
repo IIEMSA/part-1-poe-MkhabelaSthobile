@@ -1,5 +1,8 @@
-﻿namespace EventEaseApp.Models
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace EventEaseApp.Models
 {
+    [Table("Event")]
     public class Event
     {
         public int EventID { get; set; }
