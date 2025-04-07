@@ -8,7 +8,7 @@ CREATE DATABASE EventDB
 USE EventDB
 
 --TABLE CREATION
-CREATE TABLE Venue 
+CREATE TABLE Venue_ 
 (
 	VenueID INT PRIMARY KEY NOT NULL, 
 	VenueName VARCHAR (250) NOT NULL,
@@ -18,33 +18,33 @@ CREATE TABLE Venue
 );
 
 
-SELECT * FROM Venue
+SELECT * FROM Venue_
 
 
-CREATE TABLE Event_
+CREATE TABLE Event
 (
 	EventID INT PRIMARY KEY NOT NULL,
-	Venue_ID INT NOT NULL REFERENCES Venue(VenueID),
+	Venue_ID INT NOT NULL REFERENCES Venue_(VenueID),
 	EventName VARCHAR (250) NOT NULL,
 	EventDate date NOT NULL,
 	Description VARCHAR (250) NOT NULL,
 );
 
 
-SELECT * FROM Event_
+SELECT * FROM Event
 
 
-CREATE TABLE Booking
+CREATE TABLE Booking_
 (
 	BookingID INT PRIMARY KEY NOT NULL,
-	Event_ID INT NOT NULL REFERENCES Event_(EventID),
-	Venue_ID INT NOT NULL REFERENCES Venue(VenueID),
+	Event_ID INT NOT NULL REFERENCES Event(EventID),
+	Venue_ID INT NOT NULL REFERENCES Venue_(VenueID),
 	BookingDate date NOT NULL,
 	
 );
 
 
-SELECT * FROM Booking
+SELECT * FROM Booking_
 
 
 
